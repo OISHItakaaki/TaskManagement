@@ -1,4 +1,20 @@
 
+root@takaaki:TaskManagement$ ll
+total 8
+drwxrwxrwx 1 root root 4096 Jan 12 21:01 ./
+drwxrwxrwx 1 root root 4096 Jan 12 20:28 ../
+drwxrwxrwx 1 root root 4096 Jan 12 21:55 .git/
+-rwxrwxrwx 1 root root  270 Jan 12 20:10 .gitignore*
+drwxrwxrwx 1 root root 4096 Jan 11 15:21 .vscode/
+drwxrwxrwx 1 root root 4096 Jan 12 21:16 backend/
+-rwxrwxrwx 1 root root 2868 Jan 12 21:44 devnote.txt*
+-rwxrwxrwx 1 root root  592 Jan 12 21:01 docker-compose.yml*
+drwxrwxrwx 1 root root 4096 Jan 11 17:21 frontend/
+root@takaaki:TaskManagement$ pwd
+/mnt/c/Users/takaa/000.IT/01_Portfolio/TaskManagement
+root@takaaki:TaskManagement$ 
+
+
 ***************************
 　　　構成　　　
 ***************************
@@ -126,6 +142,31 @@ Task
 
 
 
++--------------------+
+| App                |
+|--------------------|
+| - tasks: Task[]    |
+|--------------------|
+| + addTask()        |
+| + toggleTask()     |
+| + deleteTask()     |
++----------+---------+
+           |
+           v
++--------------------+
+| TaskItem           |
+|--------------------|
+| - task: Task       |
+|--------------------|
+| + onToggle()       |
+| + onDelete()       |
++--------------------+
+
+Task
+--------------------
+id: number
+title: string
+completed: boolean
 
 
 
