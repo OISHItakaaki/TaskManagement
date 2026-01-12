@@ -1,0 +1,158 @@
+
+***************************
+　　　構成　　　
+***************************
+
+
+task-app/
+ ├─ backend/        （Spring Boot）
+ │   └─ src/main/java/com/example/taskapp
+ │       ├─ controller
+ │       ├─ service
+ │       ├─ repository
+ │       └─ domain
+ └─ frontend/       （React）
+     └─ src
+         ├─ components
+         ├─ pages
+         └─ api
+
+
+
+
+
+
+
+***************************
+　　　クラス図　　　
+***************************
+
+
+
++----------------------+
+| Task                 |
++----------------------+
+| Long id              |
+| String title         |
+| String description   |
+| LocalDate dueDate    |
+| TaskStatus status    |
++----------------------+
+
++---------------------------+
+| TaskRepository            |
++---------------------------+
+| save(Task)                |
+| findAll(): List<Task>     |
+| deleteById(id)            |
++---------------------------+
+
++---------------------------+
+| TaskService               |
++---------------------------+
+| create(Task)              |
+| update(Task)              |
+| changeStatus(id, status)  |
++---------------------------+
+
++---------------------------+
+| TaskController            |
++---------------------------+
+| createTask()              |
+| updateTask()              |
++---------------------------+
+
++---------------------------+
+| TaskFxController          |
++---------------------------+
+| onAddClicked()            |
+| onDeleteClicked()         |
+| onStatusChanged()         |
++---------------------------+
+
+
+
+
+
+
+
+
+***************************
+　　　技術スタック　　　
+***************************
+
+フロントエンド
+
+React
+TypeScript
+Fetch API
+
+バックエンド
+
+Java 17
+Spring Boot
+Spring Web
+Jackson
+
+保存
+
+CSV（Repositoryで抽象化）
+
+
+
+
+
+
+
+
+***************************
+　　　UML　　　
+***************************
+
+TaskController
+   |
+   v
+TaskService
+   |
+   v
+TaskRepository
+   |
+   v
+Task
+ + id
+ + title
+ + status (TaskStatus)
+
+
+
+
+
+
+
+
+
+***************************
+　　　　　　
+***************************
+***************************
+　　　　　　
+***************************
+
+
+
+
+
+[]
+
+[]
+
+[]
+
+[]
+
+[]
+
+[]
+
+[]
+
