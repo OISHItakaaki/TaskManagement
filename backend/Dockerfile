@@ -1,7 +1,11 @@
-FROM eclipse-temurin:17-jdk-alpine
+FROM eclipse-temurin:17-jdk
+
 WORKDIR /app
+
 COPY . .
-RUN ./gradlew build -x test
-EXPOSE 8080
-CMD ["java", "-jar", "build/libs/taskapp-0.0.1-SNAPSHOT.jar"]
+
+RUN chmod +x ./gradlew
+RUN ./gradlew clean bootJar
+
+CMD ["java", "-jar", "build/libs/task-backend-0.0.1-SNAPSHOT.jar"]
 
